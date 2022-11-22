@@ -33,7 +33,7 @@ class searchAPI {
   }
 }
 
-const lightbox = new SimpleLightbox('.gallery');
+const lightbox = new SimpleLightbox('.gallery a');
 
 const imageSearchApi = new searchAPI(defaultOptions);
 
@@ -75,8 +75,8 @@ function parseImagesCollection(imagesCollectionResponse) {
 //* create html and render images on website
 
 function renderImagesCollection(imageKeysList) {
-  const photoCardHtml = `<div class="photo-card w-64">
-    <a href="${imageKeysList.largeImageURL}"><img src="${imageKeysList.webformatURL}" alt="${imageKeysList.tags}" loading="lazy"  /></a>
+  const photoCardHtml = `<div class="photo-card">
+    <a class="photo-card__link" href="${imageKeysList.largeImageURL}"><img class="photo-card__img" src="${imageKeysList.webformatURL}" alt="${imageKeysList.tags}" loading="lazy"  /></a>
     <div class="info">
       <p class="info-item">
         <b>Likes ${imageKeysList.likes}</b>
